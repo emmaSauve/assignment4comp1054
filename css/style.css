@@ -1,0 +1,689 @@
+/* color pallette :
+
+    #072d67 (Blue) 
+    #5e35b1 (Purple) 
+    #f4f4f4 (White) 
+    #0e0e0e (Black) 
+
+*/
+
+/* header */
+
+.mobileNav{ /* hide the mobile nav for desktop view */
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, textarea, input, a{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{ /* no margin so that theres no white spaces on the page */
+    margin: 0;
+}
+
+/* the desktop navigation */
+.desktopNav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 175px;
+    z-index: 9999;
+    transition: all .20s;
+}
+
+/* image inside of the header */
+.desktopNav div{
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.desktopNav div img{
+    width: auto;
+    height: 100%;
+}
+    
+/* menu links */
+.desktopNav nav menu{
+    display: flex;
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+}
+    
+.desktopNav nav menu li{
+    margin: 0 10px;
+}
+    
+.desktopNav nav menu li a{
+    color: #f4f4f4;
+    font-size: 2em;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.5s;
+}
+
+/* chnage colour when hovered and add an underline */
+.desktopNav nav menu li a:hover{
+  font-size: 2.5em;
+  color: #0e0e0e;
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+    
+.desktopNav nav menu li a::after { /* straight line between the links */
+    content: "|";
+    margin-left: 2vh;
+}
+    
+.desktopNav nav menu li:last-child a::after { /* and then the last lonk has no straight line after it */
+    content: "";
+}
+
+.scrolledHeader { /* when scrolled the header changes to a black background */
+    height: 75px;
+    background-color: #0e0e0e;
+    z-index: 9999;
+}
+
+.scrolledHeader nav menu li a:hover { /* keep the links visible in the header by keeping them white when you hover */
+color:#f4f4f4;
+}
+
+/* masthead */
+
+.masthead {
+    height: 100vh; 
+    background-image: url("../imgs/4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    clip-path: polygon(100% 0, 100% 100%, 50% 93%, 0 100%, 0 0); /* clipath white point */
+}
+
+.masthead div {
+    background-color: rgba(0,0,0,.3); /* slight black transparency over the background image */
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileHeader{ /* hide the mobile header while in desktop mode */
+    display: none;
+}
+
+.masthead h1{
+    color: #f4f4f4;
+    font-size: 8em;
+}
+
+.arrow{ /* use display flex to align everything in the arrow section in a row */
+    display: flex;
+}
+  
+/* align both lines closer together */
+.masthead .arrowLeft, .masthead .arrowLeft:before{ 
+    position: absolute; 
+    left: 49%; 
+    background-color: rgba(0,0,0,0);
+} 
+  
+.masthead .arrowRight, .masthead .arrowRight:before{ 
+    position: absolute; 
+    left: 48%; 
+    background-color: rgba(0,0,0,0);
+} 
+  
+/* rotate both lines and connect them into an arrow */
+.masthead .arrowLeft {
+  width: 65px;
+  height: 50px;
+  top: 76%;
+  margin: -10px 0 0 -10px;
+  border-left: none; /* hide all the borders except the bottom border to create a line */
+  border-top: none;
+  border-right: none;
+  border-bottom: 4px #fff solid;
+  transform: rotate(54deg); /* rotate the line */
+  animation: arrowFade 2s infinite alternate; 
+}
+
+.masthead .arrowRight {
+  width: 66px;
+  height: 62px;
+  top: 75%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 4px #fff solid;
+  border-bottom: none;
+  transform: rotate(32deg);
+  animation: arrowFade 2s infinite alternate;
+}
+
+/* keyframe animation for the arrow */
+/* move the arrow left and right for an infite amount of time. and make it fade in and out for an infinite amount of time using opcacity */
+@keyframes arrowFade {
+  0% {
+    margin-left: -20px; 
+    opacity: 1;
+  }
+  50% {
+    margin-left: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    margin-left: 20px;
+    opacity: 1;
+  }
+}
+
+/* row 1 */
+.row1{
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.row1 h2{
+    font-size: 5em;
+    padding-bottom: 0;
+    font-weight: bold;
+}
+
+.row1 p{
+    font-size: 2em;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* cta */
+
+.cta{
+    display: flex;
+    width: 100%;
+    height: 750px;
+}
+
+.cta1{
+    background-image: url("../imgs/10.jpg");
+    background-position: center;
+    text-align: center;
+    transition: transform .3s ease-in-out;
+}
+
+.cta2{
+    background-image: url("../imgs/7.jpg");
+    background-position: center;
+    text-align: center;
+    transition: transform .3s ease-in-out;
+}
+
+.cta1, .cta2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 4.5em;
+    position: relative;
+    transition: filter 0.3s ease;
+}
+
+.cta1 h2, .cta2 h2 {
+    border: 6px solid #f4f4f4; 
+    padding: 250px 95px;
+    display: inline-block;
+    margin: 0; 
+    position: relative; 
+    color:#f4f4f4;
+    z-index: 2;
+}
+
+.cta1::before, .cta2::before { /* add a transparent black background over the cta images */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
+    
+}
+
+/* add a blur filter when you hover over the cta images */
+.cta1:hover{
+  filter: blur(5px);
+}
+
+.cta2:hover{
+  filter: blur(5px);
+}
+
+/* row 2 */
+
+.row2{
+    text-align: center;
+    background-color: #072d67;
+    color: #f4f4f4;
+    padding-top: 70px;
+    padding-bottom: 150px;
+    clip-path: polygon(100% 75%, 100% 0%, 0 0, 0 75%, 50% 90%);
+}
+
+.row2 h2{
+    font-size: 5em;
+}
+
+.row2 p{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 40px 200px; 
+}
+
+.row2 h2, .cta1 h2, .cta2 h2 {
+    margin: 0; 
+}
+
+.row3 { /* make the image parralax */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../imgs/5.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 800px;
+    margin-top: -180px; /* adjust the image to cover the white */
+    color: #f4f4f4;
+}
+
+.row3 h2{
+    font-size: 6em;
+    padding-top: 130px;
+}
+
+/* hover buttons */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 400px; 
+
+}
+
+.button1, .button2 {
+    font-size: 2.5em;
+    white-space: nowrap; 
+    border: solid #f4f4f4 5px;
+    margin-top: 30px;
+    padding: 35px 135px;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button1{
+  transition-duration: 0.5s;
+}
+
+.button2{
+  transition-duration: 0.5s;
+}
+
+/* hover effetc for button 1*/
+.button1:hover{
+  border-radius: 45px;
+  background-color: #f4f4f4;
+  color: #0e0e0e;
+}
+
+/* keyframe animation for the button to rotate up then down */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* hover effect for button 2 */
+.button2:hover {
+  background-color: #072d67;
+  color: #5e35b1;
+  border: #5e35b1 solid 5px;
+  animation: rotate 1.5s ease-in-out infinite; /* rotate keyframe animation infitite times */
+}
+
+
+/* form */
+.form{
+    background-color: #5e35b1;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.names{ /* target last name and first name inputs */
+    display: flex;
+    gap: 20px;
+}
+
+/* make the textear and inputs have the same style */
+.names input{
+    font-size: 2.3em;
+    width: 80vh;
+    height: 12vh;
+    padding-left: 20px;
+}
+
+input[name="email"] { /* email input */
+    font-size: 2.3em;
+    width: 166vh;
+    height: 12vh;
+    padding-left: 20px;
+}
+
+textarea{
+    font-size: 2.5em;
+    width: 166vh;
+    height: 22vh;
+    padding-left: 20px;
+    margin-top: 18px;
+}
+
+/* button 3 decoration */
+.button3{
+    font-size: 2.5em;
+    border: solid #f4f4f4 5px;
+    margin-top: 30px;
+    padding: 30px 170px;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* make the form inputs and button black when in focus */
+.button3:focus{
+  background-color: #0e0e0e;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #0e0e0e;
+
+}
+
+/* chnage the text to white so its readable */
+input:focus::placeholder, textarea:focus::placeholder {
+  color: #f4f4f4;
+
+}
+
+input:focus, textarea:focus {
+  background-color: #0e0e0e;
+}
+
+/* footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+footer p{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* mobile */
+@media screen and (max-width: 768px){
+
+    .scrolledHeader{
+      height: 44px;
+    }
+    .scrolledHeader div img {
+      height: 100%;
+    }
+
+    .mobileHeader { /* show the mobile header */
+      display: block;
+    }
+
+    .desktopNav{ /* hide the desktop header */
+      display: none;
+    }
+
+    /* mobile navigation in the header */
+    .mobileNav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      z-index: 9999; /* make visible over everything else */
+    }
+
+    /* header image */
+    .mobileNav img{
+      width: 40%;
+      height: 40%;
+    }
+  
+    #menuToggle { /* hide on default when the checkbox isnt checked*/
+      display: none;
+    }
+  
+    /* hamburger icon */
+    .hamburgerIcon {
+      display: flex;
+      flex-direction: column;
+      padding-right: 20px;
+    }
+  
+    /* use span for the lines */
+    .hamburgerIcon span {
+      width: 30px;
+      height: 3px;
+      background-color: #f4f4f4;
+      margin: 3px 0;
+    }
+  
+    /* style the links inside the menu */
+    .menu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #0e0e0e;
+      padding: 10px;
+      z-index: 9999;
+    }
+  
+    .menu menu li {
+      list-style: none;
+    }
+  
+    .menu menu li a {
+      text-decoration: none;
+      color: #f4f4f4;
+    }
+
+    /* mobile menu links decoration when hovered */
+    .menu menu li a:hover {
+      text-decoration: underline;
+      font-size: 1.5em;
+    }
+  
+    #menuToggle:checked + .hamburgerIcon + .menu {  /* when the checkbox menuToggle is checked, then show the menu links */
+      display: flex;
+    }
+
+    .desktopHeader { /* hide the desktop header */
+      display: none;
+    }
+
+    /* change the arrow so that only the arrowLeft class appears and  use it as the thicker, more square arrow*/
+    .masthead .arrowLeft{
+      width: 34px; 
+      height: 34px;
+      border-bottom: 6px #f4f4f4 solid; 
+      border-right: 6px #f4f4f4 solid; 
+      transform: rotate(45deg); 
+    }
+
+    /* make the arrowRight not visible*/
+    .masthead .arrowRight{
+      border-right: none;
+    }
+
+    .masthead{
+      height: 80vh;
+    }
+
+    .masthead div h1 {
+      font-size: 200%;
+    }
+
+    /* row 1 */
+    .row1{
+      padding-bottom: 15px;
+    }
+
+    .row1 h2{
+      font-size: 200%;
+    }
+
+    .row1 p{
+      font-size: 70%;
+      margin: 5px;
+    }
+
+    /* cta */
+    .cta {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .cta1, .cta2{
+      font-size: 70%;
+      height: 30vh;
+    }
+
+    .cta1 h2, .cta2 h2 {
+      border: 3px solid #f4f4f4;
+      padding: 70px 90px;
+      font-size: 2.2em;
+    }
+
+    /* row 2 */
+    .row2{
+      padding-top: 8%;
+      padding-bottom: 20%;
+    }
+
+    .row2 h2{
+        font-size: 200%;
+    }
+
+    .row2 p{
+        font-size: 63%;
+        margin: 15px;
+        font-weight: 500;
+    }
+
+    /* row 3 */
+    .row3{
+      padding-top: 10%;
+      font-size: 32%;
+      height: 63vh;
+    }
+
+    /* hover buttons */
+    .buttons{
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .button1, .button2{
+      padding: 10px 40px;
+      font-size: 10px;
+      border: 3px #f4f4f4 solid;
+      font-weight: 500;
+    }
+
+    /* form */
+    form{
+      height: 40vh;
+    }
+
+    .names {
+      display: flex;
+      flex-direction: column;
+      gap: 0; 
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 30vh;
+      height: 7vh;
+      font-size: 10px;
+      margin-top: 0;
+    }
+
+    .names input, input[name="email"]{
+      font-size: 10px;
+      width: 30vh;
+      height: 3vh;
+    }
+
+    /*get rid of the placeholder text for mobile */
+      input::placeholder, textarea::placeholder {
+        opacity: 0;
+    }
+
+    .button3{
+      padding: 10px 50px;
+      font-size: 10px;
+      border: 3px #f4f4f4 solid;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* footer */
+    footer{
+     text-align: center;
+    }
+
+    footer img{
+      width: 50%;
+      height: 50%;
+    }
+
+    footer p{
+      font-size: 40%;
+    }
+
+    .formSpacing {
+      margin-bottom: -10px;
+    }
+
+}
